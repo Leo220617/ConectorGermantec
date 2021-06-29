@@ -1,0 +1,10 @@
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\bin\Debug\ConectorSAP.exe.config
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\bin\Debug\ConectorSAP.exe
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\bin\Debug\ConectorSAP.pdb
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\obj\Debug\ConectorSAP.csprojAssemblyReference.cache
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\obj\Debug\ConectorSAP.Home.resources
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\obj\Debug\ConectorSAP.Properties.Resources.resources
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\obj\Debug\ConectorSAP.csproj.GenerateResource.cache
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\obj\Debug\ConectorSAP.csproj.CoreCompileInputs.cache
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\obj\Debug\ConectorSAP.exe
+D:\GIT\ConectorGermantec\ConectorSAP\ConectorSAP\obj\Debug\ConectorSAP.pdb
