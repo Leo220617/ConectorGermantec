@@ -30,7 +30,7 @@ namespace ConectorSAP
             timerInvVT.Interval = Convert.ToInt32(ObtenerConfig("TiempoInventarioInsertarVT"));
             timerPrecios.Interval = Convert.ToInt32(ObtenerConfig("TiempoUpdatePrecios"));
             timerBodega.Interval = Convert.ToInt32(ObtenerConfig("TiempoBodegasInvetarios"));
-
+            timerPagos.Interval = Convert.ToInt32(ObtenerConfig("TiempoPagos"));
 
 
         }
@@ -257,6 +257,7 @@ namespace ConectorSAP
         {
             if(checkBoxFac.Checked)
             {
+            
                 timerFacturas.Enabled = true;
             }
             else
@@ -359,6 +360,53 @@ namespace ConectorSAP
             {
                 timerBodega.Enabled = false;
             }
+        }
+
+        private void Pagos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Pagos.Checked)
+            {
+                timerPagos.Enabled = true;
+            }
+            else
+            {
+                timerPagos.Enabled = false;
+            }
+        }
+
+        private void timerPagos_Tick(object sender, EventArgs e)
+        {
+            Task.Run(async () =>
+            {
+                Invoke(new Action(() => { timerBodega.Enabled = false; }));
+                try
+                {
+                    AgregarMensajeEstado("Reenviando Pagos", true);
+                    AgregarBitacora("Enviando Pagos Contingencia...", "");
+                    HttpClient cliente = new HttpClient();
+                    string path = ObtenerConfig("urlPagos");
+
+                    HttpResponseMessage response = await cliente.GetAsync(path);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        AgregarMensajeEstado("Finalizado Pagos", true);
+                    }
+                    else
+                    {
+                        throw new Exception(response.ReasonPhrase);
+                    }
+
+                    AgregarBitacora("Finalizado Pagos...", "");
+                }
+                catch (Exception ex)
+                {
+
+                    AgregarError(ex, "Enviando Pagos ");
+                }
+
+                Invoke(new Action(() => { timerBodega.Enabled = true; }));
+            });
         }
     }
 }

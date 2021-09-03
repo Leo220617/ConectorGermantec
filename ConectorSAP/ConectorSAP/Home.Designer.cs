@@ -46,6 +46,8 @@
             this.timerBodega = new System.Windows.Forms.Timer(this.components);
             this.Bodegas = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Pagos = new System.Windows.Forms.CheckBox();
+            this.timerPagos = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // timerFacturas
@@ -189,11 +191,27 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Bitacora";
             // 
+            // Pagos
+            // 
+            this.Pagos.AutoSize = true;
+            this.Pagos.Location = new System.Drawing.Point(202, 61);
+            this.Pagos.Name = "Pagos";
+            this.Pagos.Size = new System.Drawing.Size(131, 21);
+            this.Pagos.TabIndex = 20;
+            this.Pagos.Text = "Reenviar Pagos";
+            this.Pagos.UseVisualStyleBackColor = true;
+            this.Pagos.CheckedChanged += new System.EventHandler(this.Pagos_CheckedChanged);
+            // 
+            // timerPagos
+            // 
+            this.timerPagos.Tick += new System.EventHandler(this.timerPagos_Tick);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 528);
+            this.Controls.Add(this.Pagos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Bodegas);
             this.Controls.Add(this.lbBitacora);
@@ -231,6 +249,8 @@
         private System.Windows.Forms.Timer timerBodega;
         private System.Windows.Forms.CheckBox Bodegas;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox Pagos;
+        private System.Windows.Forms.Timer timerPagos;
     }
 }
 
