@@ -64,6 +64,7 @@
             this.lbErrores.Name = "lbErrores";
             this.lbErrores.Size = new System.Drawing.Size(881, 124);
             this.lbErrores.TabIndex = 10;
+            this.lbErrores.SelectedIndexChanged += new System.EventHandler(this.lbErrores_SelectedIndexChanged);
             // 
             // label1
             // 

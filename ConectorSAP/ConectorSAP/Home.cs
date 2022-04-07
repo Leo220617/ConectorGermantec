@@ -408,5 +408,10 @@ namespace ConectorSAP
                 Invoke(new Action(() => { timerBodega.Enabled = true; }));
             });
         }
+
+        private void lbErrores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
